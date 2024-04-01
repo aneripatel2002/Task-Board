@@ -36,3 +36,54 @@ function handleDrop(event, ui) {
 $(document).ready(function () {
 
 });
+$(document).ready(function() {
+    // Initialize jQuery DatePicker for Task Due Date field
+    $('#taskDueDate').datepicker({
+      dateFormat: 'yy-mm-dd', // You can customize the date format as needed
+      autoclose: true,
+    });
+  
+    // Handle form submission
+    $('#addTaskForm').submit(function (event) {
+      event.preventDefault();
+      const taskTitle = $('#taskTitle').val();
+      const taskDueDate = $('#taskDueDate').val();
+      const taskDescription = $('#taskDescription').val();
+  
+      // Add task to the To Do list
+      const task = {
+        title: taskTitle,
+        dueDate: taskDueDate,
+        description: taskDescription,
+      };
+      addToToDoList(task);
+  
+      // Clear form inputs
+      $('#taskTitle').val('');
+      $('#taskDueDate').val('');
+      $('#taskDescription').val('');
+  
+      // Close the modal
+      $('#formModal').modal('hide');
+    });
+  
+    // Function to add task to the To Do list
+    function addToToDoList(task) {
+      // Example code to add task to the To Do list
+      const taskHtml = `<div class="card mb-3">
+        <div class="card-body">
+          <h5 class="card-title">${task.title}</h5>
+          <p class="card-text"><strong>Due Date:</strong> ${task.dueDate}</p>
+          <p class="card-text"><strong>Description:</strong> ${task.description}</p>
+          <button class="btn btn-danger delete-task">Delete Task</button>
+        </div>
+      </div>`;
+      $('#todo-cards').append(taskHtml);
+  
+      // Bind delete task function to the delete button
+      $('.delete-task').click(function() {
+        $(this).closest('.card').remove();
+      });
+    }
+  });
+  

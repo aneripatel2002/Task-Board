@@ -14,3 +14,7 @@ body {
 .task-card:hover {
   cursor: grab;
 }
+
+.btn-success {
+  background-color: #217434; /* Green color */
+  color: #fff; /* White text */
