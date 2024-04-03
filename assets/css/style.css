@@ -15,6 +15,29 @@ body {
   cursor: grab;
 }
 
+.delete-task{
+  background-color: #d9534f;
+  border-color: #fff;
+  color: #fff;
+}
+
 .btn-success {
   background-color: #217434; /* Green color */
   color: #fff; /* White text */
+}
+
+.dueInPast{
+  background-color: #d9534f;
+  color: #fff;
+}
+
+.dueToday{
+  background-color: #f0ad4e;
+  color: #fff;  
+}
+
+.dueInFuture{
+  background-color: #fff;
+  color: #000;
+}
+
