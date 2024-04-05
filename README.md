@@ -16,5 +16,7 @@ When I refresh the page, the saved tasks persist.
 
 The following animation demonstrates the application functionality:
 
-(snippet.mp4)
+(Screenshot 1.jpg)
+
+(Screenshot 2.jpg)
 
